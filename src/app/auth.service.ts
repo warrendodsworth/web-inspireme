@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+
 import { User } from '../models/user';
 
 
@@ -20,7 +21,7 @@ export class AuthService {
       if (user) {
         return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
       } else {
-        return Observable.create(null)
+        return of(null)
       }
     }))
   }
@@ -44,7 +45,7 @@ export class AuthService {
   }
   updateUserData(user: firebase.User): any {
     const userRef = this.afs.doc(`users/${user.uid}`);
-    console.log('user', user)
+
     const data = {
       uid: user.uid,
       displayName: user.displayName,
@@ -54,6 +55,7 @@ export class AuthService {
         subscriber: true
       }
     };
+
     return userRef.set(data, { merge: true });
   }
 
@@ -71,6 +73,7 @@ export class AuthService {
   }
   private checkAuthorization(user: User, allowedroles: string[]): boolean {
     if (!user) return false;
+
     for (const role of allowedroles) {
       if (user.roles[role]) {
         return true;

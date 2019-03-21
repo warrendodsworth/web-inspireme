@@ -1,11 +1,4 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyBdnmJ5ibhSMsQExzJxriibGWJDEfAnDEs",
-  authDomain: "inspireme-app.firebaseapp.com",
-  databaseURL: "https://inspireme-app.firebaseio.com",
-  projectId: "inspireme-app",
-  storageBucket: "inspireme-app.appspot.com",
-  messagingSenderId: "126319468357"
-};
+import { firebaseConfig } from './firebase.config';
 
 export const environment = {
   production: false,

@@ -6,7 +6,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContentLoaderModule } from '@netbasal/content-loader';
+import { ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +29,7 @@ import { NominateComponent } from './nominate/nominate.component';
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -34,6 +37,7 @@ import { NominateComponent } from './nominate/nominate.component';
     AngularFireAuthModule,
     AngularFireStorageModule,
     ContentLoaderModule,
+    ToastrModule.forRoot()
 
   ],
   providers: [

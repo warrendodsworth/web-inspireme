@@ -1,5 +1,5 @@
 
-
+// ionic colors
 $primary: #3880ff;
 $secondary: #0cd1e8;
 $tertiary: #7044ff;
@@ -15,6 +15,7 @@ $light: #f4f5f8;
 // fns - color(), dark(), color-ypi()
 $theme-colors: (
   "primary": #3880ff,
+  "secondary": $secondary,
 
   "success": #10dc60,
   "warning": #ffce00,
