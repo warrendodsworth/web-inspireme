@@ -1,14 +1,13 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCar7ZgSXx3bIO1rMycjZhe7UjwGewCXbE",
-  authDomain: "wiseguyapp.firebaseapp.com",
-  databaseURL: "https://wiseguyapp.firebaseio.com",
-  projectId: "wiseguyapp",
-  storageBucket: "wiseguyapp.appspot.com",
-  messagingSenderId: "423044829241"
+  apiKey: "AIzaSyBdnmJ5ibhSMsQExzJxriibGWJDEfAnDEs",
+  authDomain: "inspireme-app.firebaseapp.com",
+  databaseURL: "https://inspireme-app.firebaseio.com",
+  projectId: "inspireme-app",
+  storageBucket: "inspireme-app.appspot.com",
+  messagingSenderId: "126319468357"
 };
 
 export const environment = {
   production: true,
-  stripeKey: 'pk_test_Vyr3TSJRlcWIX5QYUDL9odmB',
   firebaseConfig: firebaseConfig
 };

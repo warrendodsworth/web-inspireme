@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+$body-bg: $light;
+
+
+.navbar{
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  transition: height .2s ease-in-out;
+  height: 70px;
+}
+
+.navbar-light{
+  background-color: #fafafa !important;
+}
+
+.card{
+  border: 1px solid darken($light, 3%) !important;
+  border-radius: 0.72rem !important;
+}

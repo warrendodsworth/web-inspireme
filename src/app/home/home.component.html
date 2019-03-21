@@ -1,12 +1,22 @@
-<div class="home1-img mt-3 p-3 p-md-5 mb-md-3 text-center position-relative overflow-hidden">
+<div class="landing-img text-center position-relative overflow-hidden">
 
-  <div class="col-md-8 p-lg-5 mx-auto my-3">
-    <h1 class="display-4 font-weight-normal">Wise Guy Investor</h1>
-    <p class="lead font-weight-normal">Look sharp make strides</p>
-    <a class="btn btn-outline-dark" href="#">Coming soon</a>
+  <div class="col-md-8 p-md-5 p-lg-5 mx-auto my-3">
+    <h1 class="display-2 text-medium">Inspire Me</h1>
+    <h2 class="text-secondary mb-5">Men of Melbourne</h2>
+
+    <a class="btn btn-secondary text-light btn-lg" [routerLink]="['/nominate']"
+      routerLinkActive="router-link-active">Nominate a friend</a>
   </div>
 
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
 
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <blockquote class="blockquote">
+        <h3 class="mb-0">It always seems impossible until it's done.</h3>
+        <footer class="blockquote-footer"><cite title="Source Title">Marthese Agius</cite></footer>
+      </blockquote>
+    </div>
+  </div>
 </div>

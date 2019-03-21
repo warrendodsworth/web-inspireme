@@ -1,5 +1,5 @@
 {
-  "name": "web-wiseguyinvestor",
+  "name": "web-inspireme",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build --prod && firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^7.1.4",
     "@angular/router": "^7.1.4",
     "@netbasal/content-loader": "^1.1.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "firebase": "^5.8.5",
     "luxon": "^1.11.4",
@@ -30,9 +32,9 @@
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.11.4",
+    "@angular-devkit/build-angular": "^0.13.6",
     "@angular/cli": "^7.1.4",
-    "@angular/compiler-cli": "^7.1.4",
+    "@angular/compiler-cli": "^7.2.10",
     "@angular/language-service": "^7.1.4",
     "@types/jasmine": "^2.8.16",
     "@types/jasminewd2": "^2.0.6",

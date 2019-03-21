@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { User } from '../models/user';
 import { AuthService } from './auth.service';
 import { FcmService } from './fcm.service';
@@ -10,7 +11,7 @@ import { FcmService } from './fcm.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'WiseGuy Investor'
+  title = 'Inspire Me - Men of Melbourne'
 
   user: User
   isCollapsed = true
@@ -38,24 +39,17 @@ export class AppComponent {
     })
   }
 
-  testNotifyMe() {
-    this.fcm.testNotifyMe(this.user.uid)
-  }
-
-  loginFacebook() {
-    this.auth.loginFacebook()
-  }
-  loginGoogle() {
-    this.auth.loginGoogle()
-  }
-
-  toggleAdminMenu() {
-    this.adminMenu = !this.adminMenu
-    localStorage.setItem('adminMenu', this.adminMenu.toString())
-  }
   isView(name) {
     var path = this.route.pathFromRoot.join('/')
     path = path.substring(1, path.length).trim()
     return path.indexOf(name) > -1;
+  }
+
+
+  testNotifyMe() {
+    this.fcm.testNotifyMe(this.user.uid)
+  }
+  loginGoogle() {
+    this.auth.loginGoogle()
   }
 }
