@@ -2,7 +2,7 @@
 // ionic colors
 $primary: #3880ff;
 $secondary: #0cd1e8;
-$tertiary: #7044ff;
+$tertiary: rgb(227, 202, 171); //#7044ff;
 
 $success: #10dc60;
 $warning: #ffce00;
@@ -16,6 +16,7 @@ $light: #f4f5f8;
 $theme-colors: (
   "primary": #3880ff,
   "secondary": $secondary,
+  "tertiary": $tertiary,
 
   "success": #10dc60,
   "warning": #ffce00,
