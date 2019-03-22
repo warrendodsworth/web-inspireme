@@ -1,6 +1,8 @@
+import 'firebase/messaging';
+
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from 'src/models/user';
@@ -9,28 +11,36 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class FcmService {
-  private messaging = firebase.messaging()
+  private messaging;
   private messageSource = new Subject()
   currentMessage = this.messageSource.asObservable() // message observable to show in Angular component
 
   testNotificationData: any = {
-    'notification': {
-      'title': 'New Subscriber',
-      'body': 'Someone is following your content!',
-      'icon': 'https://skaoss.blob.core.windows.net/brand/icon512.png'
+    "notification": {
+      "title": "New Subscriber",
+      "body": "Someone is following your content!",
+      "icon": "https://skaoss.blob.core.windows.net/brand/icon512.png"
     },
-    'collapse_key': 'do_not_collapse',
-    'from': '515731833571',
-    'to': 'eijcuH8xmn0:APA91bE-hTUHa7pzbXTtKcuAE8kmg87e9anELCIJOR8yXcJPta9-6fYM0YNrajNIOVel9Ivka5Qn4Vbd33RTm_xbT06ByqP86HysE9fqvYZzeXevMoVIr9cuZ1wMKZlBmL9Vx0xDt8dR'
+    "collapse_key": "do_not_collapse",
+    "from": "515731833571",
+    "to": "eijcuH8xmn0:APA91bE-hTUHa7pzbXTtKcuAE8kmg87e9anELCIJOR8yXcJPta9-6fYM0YNrajNIOVel9Ivka5Qn4Vbd33RTm_xbT06ByqP86HysE9fqvYZzeXevMoVIr9cuZ1wMKZlBmL9Vx0xDt8dR"
   };
 
   constructor(
     public afs: AngularFirestore,
     public _auth: AuthService) {
+
+    if (firebase.messaging.isSupported()) {
+      this.messaging = firebase.messaging();
+    }
   }
 
   async setupFCMToken(user) {
     try {
+      if (!firebase.messaging.isSupported()) {
+        return;
+      }
+
       let app = !document.URL.startsWith('http')
       if (!app) {
         let registration = await navigator.serviceWorker.register('firebase-messaging-sw.js')
@@ -52,6 +62,10 @@ export class FcmService {
   }
 
   listenToNotifications() {
+    if (!firebase.messaging.isSupported()) {
+      return;
+    }
+
     this.messaging.onMessage((payload) => {
       console.log('[fcm] notification recived', payload)
       this.messageSource.next(payload)
