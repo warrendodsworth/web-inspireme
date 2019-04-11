@@ -2,23 +2,6 @@
 
   <div class="container">
     <a routerLink="/" class="navbar-brand text-medium">Inspire Me</a>
-
-    <!-- <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto" *ngIf="user">
-        <li class="navbar-text">
-          Hi
-        </li>
-        <li class="nav-item">
-          <a (click)="testSendNotificationHttp()" class="nav-link">Notify Me</a>
-        </li>
-      </ul>
-
-      <ul class="navbar-nav ml-auto no-select" *ngIf="!user">
-        <li class="nav-item">
-          <a (click)="loginGoogle()" class="nav-link">Login</a>
-        </li>
-      </ul>
-    </div> -->
   </div>
 
 </nav>
@@ -27,6 +10,26 @@
 <router-outlet class="container-fluid p-0"></router-outlet>
 
 
+<footer class="py-4 my-5 border-top container">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4">
+      <h3>Inspire Me</h3>
+      <small class="d-block mb-3 text-muted">©2019</small>
+    </div>
+
+    <div class="col-lg-5">
+      <h5>Contact</h5>
+      <p>For information please contact the publisher</p>
+      <ul class="list-unstyled text-small">
+        <li>Marthese Agius</li>
+        <li><a class="text-muted" href="tel:0402344420">0402 344 420</a></li>
+        <li><a class="text-muted" href="mailto:inspireme@inspire-me.co">inspireme@inspire-me.co</a></li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
 
 
 <!-- <div class="collapse navbar-collapse" [ngClass]="{'show' : !isCollapsed}">
