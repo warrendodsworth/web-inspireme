@@ -7,16 +7,17 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { ContentLoaderModule } from '@netbasal/content-loader';
 import { ToastrModule } from 'ngx-toastr';
-import { environment } from 'src/environments/environment';
-
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './auth.service';
 import { FcmService } from './fcm.service';
 import { HomeComponent } from './home/home.component';
 import { NominateComponent } from './nominate/nominate.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NominateComponent } from './nominate/nominate.component';
     AngularFireAuthModule,
     AngularFireStorageModule,
     ContentLoaderModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
   ],
   providers: [

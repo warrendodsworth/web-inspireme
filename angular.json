@@ -26,6 +26,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/firebase-messaging-sw.js",
+              "src/manifest.json",
               "src/manifest.json"
             ],
             "styles": [
@@ -56,7 +57,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json"
             }
           }
         },
@@ -92,6 +95,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/firebase-messaging-sw.js",
+              "src/manifest.json",
               "src/manifest.json"
             ]
           }
