@@ -1,7 +1,12 @@
 .landing-img{
-  background-image: url('/assets/office.jpg');
+  background-image: url('/assets/cover.jpg');
 
    /* Full height */
-  height: 500px;
+  height: 400px;
+
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: black;
 }
 

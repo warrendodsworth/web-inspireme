@@ -1,32 +1,39 @@
-<div
-  class="row text-center align-items-center justify-content-center landing-img img-background position-relative overflow-hidden">
+<div style="background-color: black">
 
-  <div class="col-md-8 p-md-5 p-lg-5">
-    <h1 class="display-1 mb-0 text-secondary">Inspire Me</h1>
-    <h2 class="display-5 mb-5 text-secondary">Men of Melbourne</h2>
+  <div class="container landing-img">
 
-    <a class="btn btn-secondary text-light btn-lg" [routerLink]="['/nominate']"
-      routerLinkActive="router-link-active">Nominate your hero</a>
+    <div class="row justify-content-center align-items-end position-relative overflow-hidden" style="height: 400px">
+
+      <div class="col-md-8 p-4 p-sm-3 text-center">
+
+        <button class="btn btn-secondary text-white btn-lg font-weight-light" [routerLink]="['/nominate']">
+          Nominate your hero
+        </button>
+      </div>
+
+    </div>
   </div>
 
 </div>
 
-<div class="container py-5">
+
+
+<div class="container">
 
   <div class="row justify-content-center">
     <div class="col-lg-9 col-md-12">
 
-      <div class="card mb-5">
+      <div class="card my-5">
         <div class="card-body p-5">
-          <blockquote class="blockquote text-center">
-            <p>
+          <blockquote class="blockquote">
+            <h4>
               Each day is a journey towards your dream… each day a step towards fulfilling your destiny, but no matter
               how near or far your goal is, it always helps to be inspired by the story of others… those who have made a
               difference and reached the heights that some of us can only dream of.
-            </p>
-            <p>
+            </h4>
+            <h4>
               Dream with your eyes open... be inspired, inspire me.
-            </p>
+            </h4>
             <footer class="blockquote-footer"><cite title="Source Title">Marthese Agius</cite></footer>
           </blockquote>
         </div>
@@ -34,38 +41,43 @@
 
       <div class="card">
         <div class="card-body p-5">
-          <h4 class="mb-4">
-            Nominations are now open for successful men in business to participate in the exclusive
-            INSPIRE ME, Men of Melbourne book.
-          </h4>
-          <p>
+          <h2>
+            Nominations are now open for successful men in business
+            <!-- to participate in the exclusive INSPIRE ME, Men of Melbourne book. -->
+          </h2>
+          <p class="text-muted" style="font-size: 18px;">
             INSPIRE ME, Men of Melbourne is a prestigious coffee table book that celebrates and inspires all with
             stories of our male heroes based in Melbourne.
           </p>
-          <p>
-            We are looking for 100 men who have had a positive impact on the community in Melbourne. Stories of their
+          <p class="lead">
+            <span>W</span>e are looking for <b>100 men</b> who have had a positive impact on the
+            community in Melbourne. Stories of
+            their
             challenges,
             their triumphs and lessons, what has shaped them and words of wisdom from those who have already reached
             the heights of
             success, whatever that may be.
             Men who are impacting those around them, humble heroes.
           </p>
-          <p>
-            We are hoping to inspire those to keep pushing through with their dreams, so that they dont sit there with
+          <p class="lead">
+            We are hoping to inspire those to keep pushing through with their dreams,
+            so that they dont sit there with
             regret and wonder what could have been, enabling them to reach their full potential.
           </p>
-          <p>
+          <p class="lead">
             So, if you are a man of outstanding achievements, a man from any backround, industry and profession, be it
             big or small.
             A man who has left a positive mark on society, we would love to hear from you.
           </p>
-          <p>
+
+          <p class="text-muted text-center mt-5" style="font-size: 18px;">
             Click the button below to nominate yourself or your hero.
           </p>
 
           <div class="text-center">
-            <a class="btn btn-secondary text-light btn-lg mt-3" [routerLink]="['/nominate']"
-              routerLinkActive="router-link-active">Nominate your hero</a>
+            <button class="btn btn-secondary text-white btn-lg font-weight-light" [routerLink]="['/nominate']">
+              Nominate your hero
+            </button>
           </div>
         </div>
       </div>
