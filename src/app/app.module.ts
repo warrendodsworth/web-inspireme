@@ -10,21 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ContentLoaderModule } from '@netbasal/content-loader';
 import { ToastrModule } from 'ngx-toastr';
+
 import { environment } from '../environments/environment';
+import { firebaseConfig } from '../environments/firebase.config';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthService } from './auth.service';
-import { FcmService } from './fcm.service';
 import { HomeComponent } from './home/home.component';
 import { NominateComponent } from './nominate/nominate.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NominateComponent
-  ],
+  declarations: [AppComponent, HomeComponent, NominateComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -32,21 +27,17 @@ import { NominateComponent } from './nominate/nominate.component';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+
     ContentLoaderModule,
     ToastrModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-
   ],
-  providers: [
-    AuthService,
-    FcmService,
-    { provide: FirestoreSettingsToken, useValue: {} }
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
