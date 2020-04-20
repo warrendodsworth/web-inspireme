@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Lora', Georgia, 'Times New Roman', Times, serif; // 'Comfortaa', Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+}
+
+p.lead {
+  font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.58;
+}
+
+p span:first-child {
+  color: $secondary;
+  float: left;
+  font-size: 62px;
+  line-height: 42px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+small {
+  font-weight: 300;
+  color: $medium;
+}
+
+a {
+  cursor: pointer;
+}
